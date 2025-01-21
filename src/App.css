@@ -1,3 +1,164 @@
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 100 to 900 */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* .montserrat-<uniquifier> {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+
 section{
+  min-height: 100vh;
+}
+
+header{
   height: 100vh;
+}
+
+.prim-button{
+  background: #039;
+  border-radius: 20px;
+  border: 0.78px solid black;
+  color: white;
+  box-shadow: 1.56px 1.56px 0px 0px black; 
+  padding: 13px 35px;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: stretch; 
+}
+
+.transparent-button{
+  background: transparent;
+  border-radius: 20px;
+  border: 0.78px solid #FEFF35;
+  box-shadow: 1.56px 1.56px 0px 0px #FEFF35; 
+  padding: 13px 25px;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: stretch; 
+}
+
+h1{
+  font-size: 42px !important;
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 700 !important;
+}
+
+h2{
+  font-size: 36px !important;
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 700 !important;
+}
+
+h3{
+  font-size: 28px !important;
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 600 !important;
+}
+
+p{
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  text-align: justify;
+}
+
+.custom-card {
+  border-radius: 25px;
+  border: 1px solid #000;
+  /* background: var(--color-white-02, rgba(255, 255, 255, 0.00)); */
+  box-shadow: 3px 3px 0px 0px #000;
+  padding: 1px 1px 0.99px 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.custom-input {
+  max-width: var(--width-620, 620px) !important;
+  height: 45px !important;
+  padding: 16px 25px !important;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  border-radius: 25px !important;
+  border: 1px solid #000;
+  background: #FFF;
+  box-shadow: 2px 2px 0px 0px #000;
+}
+
+
+.custom-input:focus {
+  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2); /* Slight shadow on focus */
+}
+
+.custom-dropdown {
+  max-width: var(--width-620, 620px) !important;
+  height: 45px !important;
+  border-radius: 25px;
+  background: #FFF;
+  box-shadow: 2px 2px 0px 0px #000;
+  outline: none; /* Optional: Removes the default outline */
+  font-size: 14px; /* Font size for readability */
+  transition: box-shadow 0.2s ease; /* Smooth transition on focus */
+  border: 1px solid #000; /* Remove default border */
+}
+
+.custom-dropdown:focus {
+  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2); /* Box shadow when focused */
+}
+
+/* Styling for disabled dropdown */
+.custom-dropdown:disabled {
+  background-color: #f0f0f0; /* Light gray for disabled state */
+  box-shadow: none; /* Remove shadow when disabled */
+}
+
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Customize the select background color and borders */
+select {
+  background-color: #f8f9fa; /* Light background color */
+  border-color: #ced4da; /* Border color */
+}
+
+/* Remove the default dropdown arrow and add custom one */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 30px; /* Space for custom icon */
+}
+
+/* Adding a custom icon */
+select.custom-select {
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+/* Style the select field */
+select {
+  font-size: 1rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+}
+
+/* Focus effect */
+select:focus {
+  border-color: #007bff; /* Change to your desired color */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Optional focus effect */
 }

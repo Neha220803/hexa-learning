@@ -11,6 +11,7 @@ import Services from './pages/services';
 import ARSection from './pages/ar';
 import IQMathSection from './pages/math';
 import ContactSection from './pages/contact';
+import FooterSectioner from './components/resuable/footer';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <ARSection />
         <IQMathSection />
         <ContactSection />
+        <FooterSectioner />
       
       {/* <Routes>
         <Route path='/' element={<HomePage />} />

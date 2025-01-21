@@ -1,42 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Select from "react-select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { Country, State, City } from "country-state-city";
 
 const ContactSection = () => {
-  // State for State and City
+  const [country, setCountry] = useState({
+    value: "IN",
+    label: "India"
+  }); // Default to India
   const [state, setState] = useState(null);
   const [city, setCity] = useState(null);
+  const [statesOptions, setStatesOptions] = useState([]);
+  const [citiesOptions, setCitiesOptions] = useState([]);
 
-  // Dummy data for state and city
-  const stateOptions = [
-    { value: "Tamil Nadu", label: "Tamil Nadu" },
-    { value: "Karnataka", label: "Karnataka" },
-    { value: "Kerala", label: "Kerala" },
-    { value: "Maharashtra", label: "Maharashtra" },
-  ];
+  useEffect(() => {
+    if (country) {
+      // Fetch states based on selected country
+      const states = State.getStatesOfCountry(country.value);
+      const stateOptions = states.map((s) => ({
+        value: s.isoCode,
+        label: s.name
+      }));
+      setStatesOptions(stateOptions);
+    }
+  }, [country]);
 
-  const cityOptions = {
-    "Tamil Nadu": [
-      { value: "Chennai", label: "Chennai" },
-      { value: "Coimbatore", label: "Coimbatore" },
-      { value: "Madurai", label: "Madurai" },
-    ],
-    Karnataka: [
-      { value: "Bangalore", label: "Bangalore" },
-      { value: "Mysore", label: "Mysore" },
-      { value: "Mangalore", label: "Mangalore" },
-    ],
-    Kerala: [
-      { value: "Kochi", label: "Kochi" },
-      { value: "Thiruvananthapuram", label: "Thiruvananthapuram" },
-      { value: "Kozhikode", label: "Kozhikode" },
-    ],
-    Maharashtra: [
-      { value: "Mumbai", label: "Mumbai" },
-      { value: "Pune", label: "Pune" },
-      { value: "Nagpur", label: "Nagpur" },
-    ],
+  useEffect(() => {
+    if (state) {
+      // Fetch cities based on selected state
+      const cities = City.getCitiesOfState(country.value, state.value);
+      const cityOptions = cities.map((c) => ({
+        value: c.name,
+        label: c.name
+      }));
+      setCitiesOptions(cityOptions);
+    }
+  }, [state, country]);
+
+  const handleCountryChange = (selectedOption) => {
+    setCountry(selectedOption);
+    setState(null); // Reset state and city when country changes
+    setCity(null);
   };
 
   const handleStateChange = (selectedOption) => {
@@ -48,7 +53,6 @@ const ContactSection = () => {
     setCity(selectedOption);
   };
 
-  // Options for "Enquire For"
   const enquiryOptions = [
     { value: "Smart Learn", label: "Smart Learn" },
     { value: "Chrysaalis I-Maths Franchise", label: "Chrysaalis I-Maths Franchise" },
@@ -56,7 +60,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <div style={{ padding: "2rem 0" }}>
+    <section className="d-flex justify-content-center align-items-center py-5">
       <Container>
         <Row>
           {/* Left Column: Contact Details with Icons */}
@@ -64,15 +68,15 @@ const ContactSection = () => {
             <h2>Get in Touch</h2>
             <p>We’d love to hear from you! Reach out today.</p>
             <p>
-              <FaEnvelope style={{ color: "#007bff", marginRight: "10px" }} />
+              <FaEnvelope style={{ color: "#039", marginRight: "10px" }} />
               <strong>Email:</strong> info@hexalearning.com
             </p>
             <p>
-              <FaPhoneAlt style={{ color: "#007bff", marginRight: "10px" }} />
+              <FaPhoneAlt style={{ color: "#039", marginRight: "10px" }} />
               <strong>Phone:</strong> +91 98765 43210
             </p>
             <p>
-              <FaMapMarkerAlt style={{ color: "#007bff", marginRight: "10px" }} />
+              <FaMapMarkerAlt style={{ color: "#039", marginRight: "10px" }} />
               <strong>Address:</strong> 123 Lorem Lane, Ipsum Street,<br /> Chennai, India
             </p>
             <div style={{ border: "1px solid #ddd", borderRadius: "10px", overflow: "hidden" }}>
@@ -91,72 +95,93 @@ const ContactSection = () => {
 
           {/* Right Column: Contact Form */}
           <Col lg={6}>
-            <h2>Contact Us</h2>
-            <Form>
-              <Form.Group controlId="name" className="mb-3">
-                <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter your name" />
-              </Form.Group>
+          <Form>
+            <Form.Group controlId="name" className="mb-2">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="text" placeholder="Enter your name" className="custom-input" />
+            </Form.Group>
 
-              <Form.Group controlId="email" className="mb-3">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter your email" />
-              </Form.Group>
+            <Form.Group controlId="email" className="mb-2">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="Enter your email" className="custom-input"/>
+            </Form.Group>
 
-              <Form.Group controlId="phone" className="mb-3">
-                <Form.Label>Phone</Form.Label>
-                <Form.Control type="tel" placeholder="Enter your phone number" />
-              </Form.Group>
+            <Form.Group controlId="phone" className="mb-2">
+              <Form.Label>Phone</Form.Label>
+              <Form.Control type="tel" placeholder="Enter your phone number" className="custom-input" />
+            </Form.Group>
 
+            <div className="d-flex gap-3">
               {/* State Picker */}
-              <Form.Group controlId="state" className="mb-3">
+              <Form.Group controlId="state" className="mb-2 d-flex flex-column" style={{  width:'50%' }}>
                 <Form.Label>State</Form.Label>
-                <Select
-                  options={stateOptions}
-                  value={state}
-                  onChange={handleStateChange}
-                  placeholder="Select your state"
-                />
+                <select
+                  value={state ? state.value : ""}
+                  onChange={(e) => handleStateChange({ value: e.target.value, label: e.target.selectedOptions[0].label })}
+                  disabled={!country}
+                  className="custom-dropdown"
+                >
+                  <option value="" disabled>Select your state</option>
+                  {statesOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
               </Form.Group>
 
               {/* City Picker */}
-              <Form.Group controlId="city" className="mb-3">
+              <Form.Group controlId="city" className="mb-2 d-flex flex-column" style={{ width:'50%'}}>
                 <Form.Label>City</Form.Label>
-                <Select
-                  options={state ? cityOptions[state.value] : []}
-                  value={city}
-                  onChange={handleCityChange}
-                  placeholder="Select your city"
-                  isDisabled={!state} // Disable city until state is selected
-                />
+                <select
+                  value={city ? city.value : ""}
+                  onChange={(e) => handleCityChange({ value: e.target.value, label: e.target.selectedOptions[0].label })}
+                  disabled={!state}
+                  className="custom-dropdown"
+                >
+                  <option value="" disabled>Select your city</option>
+                  {citiesOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
               </Form.Group>
+            </div>
 
-              {/* Enquire For Dropdown */}
-              <Form.Group controlId="enquireFor" className="mb-3">
-                <Form.Label>Enquire For</Form.Label>
-                <Select
-                  options={enquiryOptions}
-                  placeholder="Select an option"
-                />
-              </Form.Group>
+            {/* Enquire For Dropdown */}
+            <Form.Group controlId="enquireFor" className="mb-2 d-flex flex-column">
+  <Form.Label>Enquire For</Form.Label>
+  <select className="custom-dropdown" id="enquireForSelect">
+    <option value="" disabled selected>Select an option</option>
+    {enquiryOptions.map((option) => (
+      <option key={option.value} value={option.value}>
+        {option.label}
+      </option>
+    ))}
+  </select>
+</Form.Group>
 
-              <Form.Group controlId="remarks" className="mb-3">
-                <Form.Label>Remarks</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  rows={3}
-                  placeholder="Enter any additional information"
-                />
-              </Form.Group>
 
-              <Button variant="primary" type="submit" style={{ width: "100%" }}>
-                Submit
-              </Button>
-            </Form>
+            <Form.Group controlId="remarks" className="mb-2">
+              <Form.Label>Remarks</Form.Label>
+              <Form.Control
+                as="input"
+                rows={3}
+                placeholder="Enter any additional information"
+                className="custom-input"
+              />
+            </Form.Group>
+
+            <button type="submit" className="prim-button">
+              Submit
+            </button>
+          </Form>
+
           </Col>
         </Row>
       </Container>
-    </div>
+    </section>
   );
 };
 

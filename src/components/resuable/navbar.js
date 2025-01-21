@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Navbar, Container, Nav, Button, Modal, Form, Toast } from 'react-bootstrap';
 import { FaEnvelope, FaUser, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import logo from '../../images/logo.svg';
+import logo1 from '../../images/logo.png'
 import '../../index.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,8 +18,8 @@ export const NavBar = () => {
                 <Navbar.Brand href="/">
                     <img
                         alt=""
-                        src={logo}
-                        // width="40"
+                        src={logo1}
+                        width="250"
                         // height="40"
                         className="d-inline-block align-top"
                     />
@@ -49,11 +50,11 @@ export const NavBar = () => {
                         <button className="btn btn-transparent text-white" ariant='transparent' onClick={() => setLgShow(true) > navigate('#!')}>
                             <div className='navpaths nav-text'>Contact Us</div>
                         </button>
-                        <div className="d-flex align-items-center justify-content-center">
+                        {/* <div className="d-flex align-items-center justify-content-center">
                             <button onClick={() => { navigate('/donate'); setExpanded(false); }} className="btn btn-primary mx-2 me-lg-0">Learn More</button>
-                        </div>
+                        </div> */}
                         <div className="d-flex align-items-center justify-content-center">
-                            <button onClick={() => { navigate('/donate'); setExpanded(false); }} className="btn btn-primary mx-2 me-lg-0">Get Started</button>
+                            <button onClick={() => { navigate('/donate'); setExpanded(false); }} className="prim-button mx-2 me-lg-0">Get Started</button>
                         </div>
                     </Nav>
                 </Navbar.Collapse>
