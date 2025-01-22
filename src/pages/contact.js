@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import Select from "react-select";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { Country, State, City } from "country-state-city";
+import { State, City } from "country-state-city";
 
 const ContactSection = () => {
   const [country, setCountry] = useState({
@@ -37,12 +36,6 @@ const ContactSection = () => {
       setCitiesOptions(cityOptions);
     }
   }, [state, country]);
-
-  const handleCountryChange = (selectedOption) => {
-    setCountry(selectedOption);
-    setState(null); // Reset state and city when country changes
-    setCity(null);
-  };
 
   const handleStateChange = (selectedOption) => {
     setState(selectedOption);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import missionimage from '../images/mission-img.png'
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Image } from 'react-bootstrap';
 
 const Mission = () => {
   const [isMobile, setIsMobile] = useState(false);

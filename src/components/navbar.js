@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
-import { Navbar, Container, Nav, Button, Modal, Form, Toast } from 'react-bootstrap';
-import { FaEnvelope, FaUser, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { Navbar, Container, Nav} from 'react-bootstrap';
 import logo1 from '../images/logo.png';
 import '../App.css';
-import { useNavigate } from 'react-router-dom';
 
 export const NavBar = () => {
-    const navigate = useNavigate();
-    const [lgShow, setLgShow] = useState(false);    
     const [expanded, setExpanded] = useState(false); 
     const handleNavbarToggle = () => setExpanded(!expanded);
 

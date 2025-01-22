@@ -1,5 +1,5 @@
 import './App.css';
-import { HashRouter, Routes, Route, BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { NavBar } from './components/navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HeaderPage from './pages/header';
