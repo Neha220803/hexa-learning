@@ -40,8 +40,8 @@ const Achievments = () => {
           <Col lg={6}>
             <h1>Our Commitment to Excellence</h1>
             <p>
-              Hexa Learning is dedicated to revolutionizing education by providing tailored
-              solutions for schools, teachers, and students. Founded in 2020, we have established
+              Hexa Learning is focused to redefining education by providing tailored
+              solutions for schools, teachers, and students. Founded in 20XX, we have established
               ourselves as a leader in educational technology, focusing on integrity, innovation, and
               quality. Our mission is to create ideal learning ecosystems that empower students, engage
               teachers, and support school management. Through strategic partnerships and cutting-edge
@@ -94,7 +94,7 @@ const Achievments = () => {
               src={achievemntimage}
               alt="Achievements"
               fluid
-              style={{ borderRadius: '10px', height: '500px', width: 'auto' }}
+              className='img-fluid height-lg-600px height-sm-300px d-block'
             />
           </Col>
         </Row>

@@ -35,13 +35,10 @@ const Mission = () => {
             />
             </Row>
             <Row className='mt-2'>
-                <p>At Hexa Learning, our mission is to empower students and educational institutions through 
-                expert consultancy, fostering a culture of informed decision-making and academic success. 
-                We envision becoming a leading education consultancy recognized for our commitment to excellence, 
-                innovation, and the success of our clients. Our core values of integrity, empowerment, 
-                collaboration, and innovation guide us in every interaction, ensuring that we provide tailored 
-                support that meets the unique needs of each client. We believe that every student deserves the 
-                opportunity to achieve their educational goals, and we are dedicated to making that a reality.
+                <p>At Hexa Learning, our mission is to provide exemplary school support services, professional development services, 
+                and training in all areas of School operations and Management. Our service offerings are built 
+                on strong values such as Integrity, Innovation and Quality. We share a deep passion for excellence 
+                through our commitment to students, teachers, parents, regulatory bodies and to our own standards.
                 </p>
             </Row>
         </Container>

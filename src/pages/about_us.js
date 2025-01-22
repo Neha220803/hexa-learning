@@ -20,15 +20,13 @@ const AboutUs = () => {
                 {/* Second Column */}
                 <Col lg={6}>
                     <p>
-                        Hexa Learning is dedicated to revolutionizing education by 
+                        Hexa Learning is dedicated in reinventing education by 
                         providing tailored solutions for schools, teachers, and students.
-                        Founded in 2020, we have established ourselves as a leader in
-                        educational technology, focusing on integrity, innovation, and
-                        quality. Our mission is to create ideal learning ecosystems that
-                        empower students, engage teachers, and support school
-                        management. Through strategic partnerships and cutting-edge
-                        technology, we aim to enhance learning experiences and address
-                        the diverse needs of the education sector. 
+                        We are an educational consultancy company,  rich in a kaleidoscope 
+                        of experience ranging from pre school after school programs to managing 
+                        K-12 schools to preparation in competitive exams to higher education abroad. 
+                        We specialize in creating tailor made solutions to meet any need that schools 
+                        may have, be it academic, marketing  or operational.  
                     </p>
                 </Col>
             </Row>

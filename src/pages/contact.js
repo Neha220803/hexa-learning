@@ -58,7 +58,7 @@ const ContactSection = () => {
         <Row>
           {/* Left Column: Contact Details with Icons */}
           <Col lg={6} style={{ marginBottom: "2rem" }}>
-            <h2>Get in Touch</h2>
+            <h2 style={{color: "#039"}}>Get in Touch</h2>
             <p>We’d love to hear from you! Reach out today.</p>
             <p>
               <FaEnvelope style={{ color: "#039", marginRight: "10px" }} />

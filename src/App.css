@@ -207,6 +207,56 @@ select:focus {
   }
 }
 
+.stroke-animation {
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.stroke-text {
+    position: relative;
+    display: inline-block;
+    color: black;
+}
+
+.stroke-text::after {
+    content: 'Education';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    text-shadow: 0 0 0 #039 ;
+    overflow: hidden;
+    width: 0%;
+    border-right: 1px solid transparent;
+    animation: stroke-draw 3s ease-in-out infinite;
+    white-space: nowrap;
+}
+
+@keyframes stroke-draw {
+    0% {
+        width: 0%;
+    }
+    60% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes fade {
+    0%, 75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
 /* Hover effect with yellow underline */
 .footer-link {
   color: #fff;
