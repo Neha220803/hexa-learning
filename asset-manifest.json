@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.2f42e964.css",
-    "main.js": "/static/js/main.663e8080.js",
-    "static/media/image -ar.png": "/static/media/image -ar.92d1e8d7b61591e9e30d.png",
-    "static/media/mission-img.png": "/static/media/mission-img.0bcd0edb1e3c2dd42941.png",
-    "static/media/math-img.png": "/static/media/math-img.681aeb0ed06fb9ad1806.png",
-    "static/media/achievemnt-image.png": "/static/media/achievemnt-image.17af50ecb553000d5df1.png",
-    "static/media/header-img.png": "/static/media/header-img.7b2b3536a49c5c644f76.png",
-    "static/media/logo.png": "/static/media/logo.9d58458a39a4102aafc1.png",
-    "static/media/services-2.png": "/static/media/services-2.e3f96b1ea86aff639942.png",
-    "static/media/services-1.png": "/static/media/services-1.51f2cc85d50d42e2eab0.png",
-    "static/media/services-3.png": "/static/media/services-3.3f3145b013ffc9ac0f3e.png",
-    "index.html": "/index.html",
-    "main.2f42e964.css.map": "/static/css/main.2f42e964.css.map",
-    "main.663e8080.js.map": "/static/js/main.663e8080.js.map"
+    "main.css": "/hexa-learning/static/css/main.2f42e964.css",
+    "main.js": "/hexa-learning/static/js/main.70155dbc.js",
+    "static/media/image -ar.png": "/hexa-learning/static/media/image -ar.92d1e8d7b61591e9e30d.png",
+    "static/media/mission-img.png": "/hexa-learning/static/media/mission-img.0bcd0edb1e3c2dd42941.png",
+    "static/media/math-img.png": "/hexa-learning/static/media/math-img.681aeb0ed06fb9ad1806.png",
+    "static/media/achievemnt-image.png": "/hexa-learning/static/media/achievemnt-image.17af50ecb553000d5df1.png",
+    "static/media/header-img.png": "/hexa-learning/static/media/header-img.7b2b3536a49c5c644f76.png",
+    "static/media/logo.png": "/hexa-learning/static/media/logo.9d58458a39a4102aafc1.png",
+    "static/media/services-2.png": "/hexa-learning/static/media/services-2.e3f96b1ea86aff639942.png",
+    "static/media/services-1.png": "/hexa-learning/static/media/services-1.51f2cc85d50d42e2eab0.png",
+    "static/media/services-3.png": "/hexa-learning/static/media/services-3.3f3145b013ffc9ac0f3e.png",
+    "index.html": "/hexa-learning/index.html",
+    "main.2f42e964.css.map": "/hexa-learning/static/css/main.2f42e964.css.map",
+    "main.70155dbc.js.map": "/hexa-learning/static/js/main.70155dbc.js.map"
   },
   "entrypoints": [
     "static/css/main.2f42e964.css",
-    "static/js/main.663e8080.js"
+    "static/js/main.70155dbc.js"
   ]
 }
