@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form } from 'react-bootstrap';
 import '../App.css';
 
 const Footer = () => {
@@ -8,27 +8,27 @@ const Footer = () => {
       <Container>
         <Row>
           {/* Company Section */}
-          <Col md={3} lg={3}>
+          <Col md={3} lg={3} sm={4} xs={4}>
             <h4>Company</h4>
             <ul className="list-unstyled">
-              <li><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>About Us</a></li>
-              <li><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Mission and Vision</a></li>
+              <li><a href="#" className="footer-link">About Us</a></li>
+              <li><a href="#" className="footer-link">Mission & Vision</a></li>
             </ul>
           </Col>
 
           {/* Services Section */}
-          <Col md={3} lg={2}>
+          <Col md={3} lg={2} sm={4} xs={4}>
             <h4>Services</h4>
             <ul className="list-unstyled">
-              <li><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Services</a></li>
+              <li><a href="#" className="footer-link">Services</a></li>
             </ul>
           </Col>
 
           {/* Contact Section */}
-          <Col md={3} lg={3}>
+          <Col md={3} lg={3} sm={4} xs={4}>
             <h4>Contact</h4>
             <ul className="list-unstyled">
-              <li><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Contact Us</a></li>
+              <li><a href="#" className="footer-link">Contact Us</a></li>
             </ul>
           </Col>
 
@@ -53,18 +53,18 @@ const Footer = () => {
 
         <Row className="mt-3">
           <Col md={6}>
-          <div style={{fontSize:'16px'}}>Copyright © 2025, hexalearning.com. All rights reserved.</div>
+            <div style={{fontSize:'16px'}}>Copyright © 2025, hexalearning.com. All rights reserved.</div>
           </Col>
           <Col md={6} className="text-md-right">
-            <a href="#" style={{ color: '#fff', textDecoration: 'none', marginRight: '15px' }}>Terms & Conditions</a>
-            <a href="#" style={{ color: '#fff', textDecoration: 'none', marginRight: '15px' }}>Privacy Policy</a>
-            <a href="#" style={{ color: '#fff', textDecoration: 'none' }}>
+            <a href="#" className="footer-link" style={{ marginRight: '15px' }}>Terms & Conditions</a>
+            <a href="#" className="footer-link" style={{ marginRight: '15px' }}>Privacy Policy</a>
+            <a href="#" className="footer-link" style={{ marginRight: '10px' }}>
               <i className="fab fa-facebook"></i>
             </a>
-            <a href="#" style={{ color: '#fff', textDecoration: 'none', marginLeft: '10px' }}>
+            <a href="#" className="footer-link" style={{ marginLeft: '10px' }}>
               <i className="fab fa-linkedin"></i>
             </a>
-            <a href="#" style={{ color: '#fff', textDecoration: 'none', marginLeft: '10px' }}>
+            <a href="#" className="footer-link" style={{ marginLeft: '10px' }}>
               <i className="fab fa-twitter"></i>
             </a>
           </Col>

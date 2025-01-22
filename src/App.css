@@ -196,6 +196,42 @@ select:focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Optional focus effect */
 }
 
+.custom-toggle {
+  display: none; /* Hidden by default */
+}
+
+@media (max-width: 991.98px) {
+  /* Show on screens smaller than lg (992px) */
+  .custom-toggle {
+      display: block;
+  }
+}
+
+/* Hover effect with yellow underline */
+.footer-link {
+  color: #fff;
+  text-decoration: none; /* No underline by default */
+  position: relative; /* Needed for positioning the pseudo-element */
+}
+
+.footer-link:hover {
+  color: #fff; /* Keep the color unchanged on hover */
+}
+
+.footer-link::after {
+  content: ''; /* Creates an empty element after the text */
+  position: absolute;
+  bottom: 0; /* Position the underline at the bottom of the text */
+  left: 0;
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  background-color: #FEFF35; /* Color of the underline */
+  transition: width 0.3s ease; /* Smooth transition effect */
+}
+
+.footer-link:hover::after {
+  width: 100%; /* Expand the underline to full width on hover */
+}
 
 .nav-head {
   color: #FEFF35 !important;
@@ -208,16 +244,34 @@ select:focus {
   background-color: rgba(0, 0, 0, 0.879) !important;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   color: #FEFF35 !important;
+}
 
+.navpaths {
+  color: #FEFF35 !important;
+  text-decoration: none;
+  position: relative;
 }
 
 .navpaths:hover {
   color: #00FF01 !important;
-  border-bottom: 2px solid #FEFF35 !important;
-  /* font-weight: 500 !important; */
-  transition: all 0.75s ease !important;
-
+  transition: color 0.75s ease !important;
 }
+
+.navpaths::after {
+  content: ''; /* Creates the underline effect */
+  position: absolute;
+  bottom: 10px; /* Position the underline below the text */
+  left: 0;
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  background-color: #FEFF35; /* Yellow underline */
+  transition: width 0.75s ease; /* Smooth animation for the underline */
+}
+
+.navpaths:hover::after {
+  width: 100%; /* Expands the underline to full width on hover */
+}
+
 
 .navpaths {
   color: rgb(194, 191, 191) !important;

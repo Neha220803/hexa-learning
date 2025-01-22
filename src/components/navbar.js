@@ -30,7 +30,7 @@ export const NavBar = () => {
                         className="d-inline-block align-top"
                     />
                 </Navbar.Brand>
-                <div
+                <div className="custom-toggle"
                     style={{
                         cursor: 'pointer',
                         fontSize: '30px',
