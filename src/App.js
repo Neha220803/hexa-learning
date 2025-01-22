@@ -17,7 +17,6 @@ import SchoolSection from './pages/school';
 function App() {
   return (
     <div>
-      <BrowserRouter>
         <NavBar />
         <HeaderPage />
         <AboutUs />
@@ -30,7 +29,6 @@ function App() {
         <SchoolSection />
         <ContactSection />
         <FooterSectioner />
-    </BrowserRouter>
     </div>
   );
 }
