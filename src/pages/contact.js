@@ -60,7 +60,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="d-flex justify-content-center align-items-center py-5">
+    <section className="d-flex justify-content-center align-items-center py-3 px-2 px-lg-0 py-lg-5" id="contact">
       <Container>
         <Row>
           {/* Left Column: Contact Details with Icons */}

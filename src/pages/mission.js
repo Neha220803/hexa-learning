@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import missionimage from '../images/mission-img.png'
-import {Container, Row, Col, Image } from 'react-bootstrap';
-import '../App.css';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 
 const Mission = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 576); // Check if screen size is smaller than 576px
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Check on initial load
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <section className="d-flex justify-content-center align-items-center">
+    <div className="d-flex justify-content-center align-items-center px-2" id="mission">
         <Container className="d-flex flex-column justify-content-center align-items-start">
             <Row className='my-4'>
                 <h1>Our Mission</h1>
@@ -14,8 +26,12 @@ const Mission = () => {
             <Image
               src={missionimage}
               alt="Mission Image"
-              fluid // Makes the image responsive
-              style={{ borderRadius: '10px' }} // Optional styling for rounded corners
+              fluid
+              style={{
+                borderRadius: '10px',
+                height: isMobile ? '200px' : 'auto', // Apply 200px height for mobile
+                objectFit: 'cover',
+              }}
             />
             </Row>
             <Row className='mt-2'>
@@ -29,8 +45,8 @@ const Mission = () => {
                 </p>
             </Row>
         </Container>
-    </section>
+    </div>
   )
 }
 
-export default Mission
+export default Mission;

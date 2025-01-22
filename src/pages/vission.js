@@ -4,13 +4,13 @@ import { FaGraduationCap, FaChalkboardTeacher, FaBusinessTime } from 'react-icon
 
 const VissionSection = () => {
   return (
-    <div style={{ background: '#039', color: 'white' }} className="d-flex justify-content-center align-items-center py-5">
-      <Container className="d-flex flex-column justify-content-center align-items-start g-5">
+    <div style={{ background: '#039', color: 'white' }} className="d-flex justify-content-center align-items-center py-lg-5 py-3 px-2">
+      <Container className="d-flex flex-column justify-content-center align-items-start">
         <Row className='my-3'>
           <h1>Vision</h1>
           <p>Our Vision is to create schools that are ideal learning ecosystems and enablers in</p>
         </Row>
-        <Row className="g-4"> {/* Adding gap of 4 between columns */}
+        <Row className=""> {/* Adding gap of 4 between columns */}
           {/* First Column: Helping Students */}
           <Col lg={4} className="text-start">
             <FaGraduationCap size={30} />

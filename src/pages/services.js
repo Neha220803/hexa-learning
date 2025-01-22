@@ -6,7 +6,26 @@ import serviceImage3 from '../images/services-3.png';
 import '../App.css';
 
 const Services = () => {
-  // Array of service objects
+
+  // Function to handle button click and scroll to the corresponding section
+  const handleClick = (index) => {
+    let targetId = '';
+    switch(index) {
+      case 0:
+        targetId = 'ar';  // For index 0, scroll to section with id "ar"
+        break;
+      case 1:
+        targetId = 'math';  // For index 1, scroll to section with id "maths"
+        break;
+      case 2:
+        targetId = 'school';  // For index 2, scroll to section with id "school"
+        break;
+      default:
+        return;
+    }
+    window.location.hash = targetId;  // Change URL hash and scroll to the section
+  };
+
   const services = [
     {
       title: 'AR-Based Learning Kits',
@@ -26,7 +45,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="d-flex justify-content-center align-items-center py-5">
+    <section className="d-flex justify-content-center align-items-center py-3 px-2 py-lg-5" id="services">
       <Container className="d-flex flex-column justify-content-center align-items-center">
         <Row className="d-flex justify-content-center align-items-start mb-2">
           <Col lg={6}>
@@ -44,19 +63,21 @@ const Services = () => {
 
         {/* Cards Section */}
         <Row className="g-4">
-  {services.map((service, index) => (
-    <Col lg={4} md={6} key={index}>
-      <Card className="custom-card">
-        <Card.Img variant="top" src={service.image} alt={service.title} />
-        <Card.Body>
-          <Card.Title>{service.title}</Card.Title>
-          <Card.Text>{service.description}</Card.Text>
-          <button className="transparent-button">Learn More</button>
-        </Card.Body>
-      </Card>
-    </Col>
-  ))}
-</Row>
+          {services.map((service, index) => (
+            <Col lg={4} md={6} key={index}>
+              <Card className="border-0">
+                <div className='custom-card'>
+                  <Card.Img variant="top" src={service.image} alt={service.title} style={{borderRadius:'23px'}} />
+                  <Card.Body>
+                    <Card.Title>{service.title}</Card.Title>
+                    <Card.Text>{service.description}</Card.Text>
+                    <button className="transparent-button" onClick={() => handleClick(index)}>Learn More</button>
+                  </Card.Body>
+                </div>
+              </Card>
+            </Col>
+          ))}
+        </Row>
 
       </Container>
     </section>

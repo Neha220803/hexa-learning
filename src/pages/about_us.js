@@ -3,17 +3,17 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const AboutUs = () => {
   return (
-    <div style={{ background: '#F3F4F6' }} className="d-flex justify-content-center align-items-center py-5">
+    <div style={{ background: '#F3F4F6' }} className="d-flex justify-content-center align-items-center px-2 py-5" id="about">
         <Container className="justify-content-center align-items-center">
             <Row className="justify-content-center align-items-center">
                 {/* First Column */}
-                <Col lg={6} className="justify-content-between" style={{ height: '100%' }}>
+                <Col lg={6} className="justify-content-between mb-2 mb-lg-0" style={{ height: '100%' }}>
                     <div>
-                        <h1>Who are we</h1>
-                        <h2 style={{ color: '#039' }}>Discover Hexa Learning</h2>
+                        <h1 className="mb-lg-3">Who are we ?</h1>
+                        <h2 style={{ color: '#039' }} className="mb-3">Discover Hexa Learning</h2>
                     </div>
                     <div>
-                        <p>Join us in our journey to transform education for a brighter future.</p>
+                        <p className="mb-0">Join us in our journey to transform education for a brighter future.</p>
                     </div>
                 </Col>
 

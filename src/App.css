@@ -10,7 +10,6 @@
   font-style: normal;
 } */
 
-
 section{
   min-height: 100vh;
 }
@@ -19,27 +18,61 @@ header{
   height: 100vh;
 }
 
-.prim-button{
-  background: #039;
+.prim-button {
+  background: #039; /* Initial deep blue */
   border-radius: 20px;
-  border: 0.78px solid black;
-  color: white;
-  box-shadow: 1.56px 1.56px 0px 0px black; 
+  border: 0.78px solid black; /* Initial black border */
+  color: white; /* Initial white text */
+  box-shadow: 3px 3px 0px 0px #00FF01; /* Green shadow */
   padding: 13px 35px;
+  font-weight: 500;
   justify-content: center;
   align-items: flex-start;
-  align-self: stretch; 
+  align-self: stretch;
+  transition: all 0.3s ease; /* Smooth transition for hover and active effects */
+}
+
+.prim-button:hover {
+  background: #039; /* Deeper blue for hover */
+  border: 0.78px solid #0056b3; /* Matching border */
+  color: white; /* Maintain white text */
+  box-shadow: 3px 3px 0px 0px #0056b3,  0 0 10px #0056b3; /* Blue shadow for hover */
+  transform: translateY(-2px); 
+}
+
+.prim-button:active {
+  background: #003f7f; /* Even deeper blue when pressed */
+  border: 0.78px solid #003f7f; /* Match border to active background */
+  box-shadow: 0 2px #003f7f; /* Smaller shadow for pressed effect */
+  transform: translateY(2px); /* Slight downward movement */
 }
 
 .transparent-button{
   background: transparent;
   border-radius: 20px;
-  border: 0.78px solid #FEFF35;
-  box-shadow: 1.56px 1.56px 0px 0px #FEFF35; 
+  border: 0.78px solid #00FF01;
+  box-shadow: 3px 3px 0px 0px #00FF01; 
   padding: 13px 25px;
+  font-weight: 500;
+  color: rgb(45, 45, 45);
   justify-content: center;
   align-items: flex-start;
   align-self: stretch; 
+  transition: all 0.3s ease;
+}
+
+.transparent-button:hover {
+  background-color: #00FF01; /* Bright green for hover */
+  box-shadow: 3px 3px 0px 0px #00CC00, 0 0 10px #00FF01; /* 3D and glow effect */
+  border: 0.78px solid #00CC00; /* Slightly darker green for border */
+  color: #fff; /* White text for better contrast */
+  transform: translateY(-2px); /* Lift button for a 3D hover effect */
+}
+
+.transparent-button:active {
+  background-color: #00CC00; /* Slightly darker green for active state */
+  box-shadow: 0 2px #00FF01; /* Reduced shadow to simulate pressing */
+  transform: translateY(2px); /* Slight downward movement */
 }
 
 h1{
@@ -73,10 +106,10 @@ p{
 
 .custom-card {
   border-radius: 25px;
-  border: 1px solid #000;
+  border: 2px solid #000;
   /* background: var(--color-white-02, rgba(255, 255, 255, 0.00)); */
   box-shadow: 3px 3px 0px 0px #000;
-  padding: 1px 1px 0.99px 1px;
+  /* padding: 1px 1px 0.99px 1px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -162,3 +195,112 @@ select:focus {
   border-color: #007bff; /* Change to your desired color */
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Optional focus effect */
 }
+
+
+.nav-head {
+  color: #FEFF35 !important;
+  font-weight: bold !important;
+  vertical-align: middle;
+  line-height: 1.8;
+}
+
+.navcont {
+  background-color: rgba(0, 0, 0, 0.879) !important;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #FEFF35 !important;
+
+}
+
+.navpaths:hover {
+  color: #00FF01 !important;
+  border-bottom: 2px solid #FEFF35 !important;
+  /* font-weight: 500 !important; */
+  transition: all 0.75s ease !important;
+
+}
+
+.navpaths {
+  color: rgb(194, 191, 191) !important;
+  font-size: 18px !important;
+  border: none;
+  outline: none;
+}
+
+@media (max-width: 1200px) and (min-width: 1000px) {
+  .navpaths {
+    font-size: 14px !important;
+  }
+
+  .nav-head {
+    font-size: 16px !important;
+  }
+}
+
+.navcont button:focus,
+.navcont button:active,
+.navcont button:hover {
+  outline: none;
+}
+
+
+/* Responsive Font Sizes for h1, h2, h3, and p */
+@media (max-width: 991px) {
+  h1 {
+    font-size: 1.9rem !important;
+  }
+  h2 {
+    font-size: 1.7rem !important;
+  }
+  h3 {
+    font-size: 1.5rem !important;
+  }
+  p {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 761px) {
+  h1 {
+    font-size: 1.6rem !important;
+  }
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  h3 {
+    font-size: 1.4rem !important;
+  }
+  p {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.9rem !important;
+  }
+  h2 {
+    font-size: 1.6rem !important;
+  }
+  h3 {
+    font-size: 1.4rem !important;
+  }
+  p {
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem !important;
+  }
+  h2 {
+    font-size: 1.2rem !important;
+  }
+  h3 {
+    font-size: 1.1rem !important;
+  }
+  p {
+    font-size: 0.85rem !important;
+  }
+}
+

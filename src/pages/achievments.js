@@ -5,7 +5,7 @@ import '../App.css';
 
 const Achievments = () => {
   return (
-    <section style={{backgroundColor: 'black', color:'white'}}  className="d-flex justify-content-center align-items-center">
+    <section style={{backgroundColor: 'black', color:'white'}}  className="d-flex justify-content-center align-items-center py-4 px-2">
         <Container >
         <Row  className="d-flex justify-content-end align-items-center">
           <Col lg={6} >

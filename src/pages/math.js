@@ -4,7 +4,7 @@ import mathimg from '../images/math-img.png';
 
 const IQMathSection = () => {
   return (
-    <section style={{backgroundColor: 'black', color:'white'}}  className="d-flex justify-content-center align-items-center">
+    <section style={{backgroundColor: 'black', color:'white'}}  className="d-flex justify-content-center align-items-center px-2" id="math">
             <Container >
             <Row  className="d-flex justify-content-end align-items-center">
               <Col lg={6}>
