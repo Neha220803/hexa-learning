@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/hexa-learning/static/css/main.dd709832.css",
-    "main.js": "/hexa-learning/static/js/main.218db34c.js",
-    "static/media/image -ar.png": "/hexa-learning/static/media/image -ar.92d1e8d7b61591e9e30d.png",
+    "main.js": "/hexa-learning/static/js/main.3143e78a.js",
+    "static/media/image -ar.png": "/hexa-learning/static/media/image -ar.8494ba2e94a813868fe4.png",
     "static/media/mission-img.png": "/hexa-learning/static/media/mission-img.0bcd0edb1e3c2dd42941.png",
     "static/media/math-img.png": "/hexa-learning/static/media/math-img.681aeb0ed06fb9ad1806.png",
     "static/media/achievemnt-image.png": "/hexa-learning/static/media/achievemnt-image.17af50ecb553000d5df1.png",
     "static/media/header-img.png": "/hexa-learning/static/media/header-img.7b2b3536a49c5c644f76.png",
     "static/media/logo.png": "/hexa-learning/static/media/logo.9d58458a39a4102aafc1.png",
     "static/media/services-2.png": "/hexa-learning/static/media/services-2.e3f96b1ea86aff639942.png",
-    "static/media/services-1.png": "/hexa-learning/static/media/services-1.51f2cc85d50d42e2eab0.png",
+    "static/media/services-1.png": "/hexa-learning/static/media/services-1.fcbba6cbc931104c0430.png",
     "static/media/services-3.png": "/hexa-learning/static/media/services-3.3f3145b013ffc9ac0f3e.png",
     "index.html": "/hexa-learning/index.html",
     "main.dd709832.css.map": "/hexa-learning/static/css/main.dd709832.css.map",
-    "main.218db34c.js.map": "/hexa-learning/static/js/main.218db34c.js.map"
+    "main.3143e78a.js.map": "/hexa-learning/static/js/main.3143e78a.js.map"
   },
   "entrypoints": [
     "static/css/main.dd709832.css",
-    "static/js/main.218db34c.js"
+    "static/js/main.3143e78a.js"
   ]
 }
