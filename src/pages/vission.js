@@ -1,40 +1,81 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { FaGraduationCap, FaChalkboardTeacher, FaBusinessTime } from 'react-icons/fa'; // Importing icons
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import {
+  FaGraduationCap,
+  FaChalkboardTeacher,
+  FaBusinessTime,
+} from "react-icons/fa";
+import { motion } from "framer-motion";
+import {
+  useScrollAnimation,
+  visionHeadingVariants,
+  visionCardVariants,
+} from "../animations/variants";
 
-const VissionSection = () => {
+const VisionSection = () => {
+  const { ref, animate } = useScrollAnimation();
+
+  const visionItems = [
+    {
+      icon: <FaGraduationCap size={40} />,
+      title: "Helping students",
+      description:
+        "Helping students identify and realize their true potential.",
+    },
+    {
+      icon: <FaChalkboardTeacher size={40} />,
+      title: "Assisting teachers",
+      description:
+        "Assisting teachers in positively engaging with students to provide a conducive learning environment.",
+    },
+    {
+      icon: <FaBusinessTime size={40} />,
+      title: "Aiding Management",
+      description:
+        "Aiding the management in operating the school efficiently by providing service support in all functional areas.",
+    },
+  ];
+
   return (
-    <div style={{ background: '#039', color: 'white' }} className="d-flex justify-content-center align-items-center py-lg-5 py-3 px-2">
+    <div
+      ref={ref}
+      style={{ background: "#039", color: "white" }}
+      className="d-flex justify-content-center align-items-center py-lg-5 py-3 px-2"
+    >
       <Container className="d-flex flex-column justify-content-center align-items-start">
-        <Row className='my-3'>
+        <motion.div
+          className="w-100 my-3"
+          variants={visionHeadingVariants}
+          initial="hidden"
+          animate={animate ? "visible" : "hidden"}
+        >
           <h1>Vision</h1>
-          <p>Our Vision is to create schools that are ideal learning ecosystems and enablers in</p>
-        </Row>
-        <Row className=""> {/* Adding gap of 4 between columns */}
-          {/* First Column: Helping Students */}
-          <Col lg={4} className="text-start">
-            <FaGraduationCap size={30} />
-            <h3>Helping students</h3>
-            <p>Helping students identify and realize their true potential.</p>
-          </Col>
+          <p>
+            Our Vision is to create schools that are ideal learning ecosystems
+            and enablers in
+          </p>
+        </motion.div>
 
-          {/* Second Column: Assisting Teachers */}
-          <Col lg={4} className="text-start">
-            <FaChalkboardTeacher size={30} />
-            <h3>Assisting teachers</h3>
-            <p>Assisting teachers in positively engaging with students to provide a conducive learning environment.</p>
-          </Col>
-
-          {/* Third Column: Aiding Management */}
-          <Col lg={4} className="text-start">
-            <FaBusinessTime size={30} />
-            <h3>Aiding Management</h3>
-            <p>Aiding the management in operating the school efficiently by providing service support in all functional areas.</p>
-          </Col>
+        <Row className="g-4 w-100">
+          {visionItems.map((item, index) => (
+            <Col lg={4} className="text-start" key={index}>
+              <motion.div
+                variants={visionCardVariants}
+                custom={index}
+                initial="hidden"
+                animate={animate ? "visible" : "hidden"}
+                className="p-3 h-100"
+              >
+                <div className="mb-3">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </motion.div>
+            </Col>
+          ))}
         </Row>
       </Container>
     </div>
   );
-}
+};
 
-export default VissionSection;
+export default VisionSection;

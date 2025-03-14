@@ -1,7 +1,7 @@
 /* <uniquifier>: Use a unique and descriptive class name
 <weight>: Use a value from 100 to 900 */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* .montserrat-<uniquifier> {
   font-family: "Montserrat", serif;
@@ -10,20 +10,33 @@
   font-style: normal;
 } */
 
-section{
+html,
+body {
+  overflow-x: hidden !important;
+  /* overflow-y: scroll !important; */
+  scroll-behavior: smooth !important;
+}
+
+section {
   min-height: 100vh;
 }
 
-header{
-  height: 100vh;
+header {
+  min-height: 100vh !important;
 }
-
+@media (max-width: 761px) {
+  .header-img {
+    height: 300px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+}
 .prim-button {
   background: #039; /* Initial deep blue */
   border-radius: 20px;
   border: 0.78px solid black; /* Initial black border */
   color: white; /* Initial white text */
-  box-shadow: 3px 3px 0px 0px #00FF01; /* Green shadow */
+  box-shadow: 3px 3px 0px 0px #00ff01; /* Green shadow */
   padding: 13px 35px;
   font-weight: 500;
   justify-content: center;
@@ -36,8 +49,8 @@ header{
   background: #039; /* Deeper blue for hover */
   border: 0.78px solid #0056b3; /* Matching border */
   color: white; /* Maintain white text */
-  box-shadow: 3px 3px 0px 0px #0056b3,  0 0 10px #0056b3; /* Blue shadow for hover */
-  transform: translateY(-2px); 
+  box-shadow: 3px 3px 0px 0px #0056b3, 0 0 10px #0056b3; /* Blue shadow for hover */
+  transform: translateY(-2px);
 }
 
 .prim-button:active {
@@ -47,56 +60,56 @@ header{
   transform: translateY(2px); /* Slight downward movement */
 }
 
-.transparent-button{
+.transparent-button {
   background: transparent;
   border-radius: 20px;
-  border: 0.78px solid #00FF01;
-  box-shadow: 3px 3px 0px 0px #00FF01; 
+  border: 0.78px solid #00ff01;
+  box-shadow: 3px 3px 0px 0px #00ff01;
   padding: 13px 25px;
   font-weight: 500;
   color: rgb(45, 45, 45);
   justify-content: center;
   align-items: flex-start;
-  align-self: stretch; 
+  align-self: stretch;
   transition: all 0.3s ease;
 }
 
 .transparent-button:hover {
-  background-color: #00FF01; /* Bright green for hover */
-  box-shadow: 3px 3px 0px 0px #00CC00, 0 0 10px #00FF01; /* 3D and glow effect */
-  border: 0.78px solid #00CC00; /* Slightly darker green for border */
+  background-color: #00ff01; /* Bright green for hover */
+  box-shadow: 3px 3px 0px 0px #00cc00, 0 0 10px #00ff01; /* 3D and glow effect */
+  border: 0.78px solid #00cc00; /* Slightly darker green for border */
   color: #fff; /* White text for better contrast */
   transform: translateY(-2px); /* Lift button for a 3D hover effect */
 }
 
 .transparent-button:active {
-  background-color: #00CC00; /* Slightly darker green for active state */
-  box-shadow: 0 2px #00FF01; /* Reduced shadow to simulate pressing */
+  background-color: #00cc00; /* Slightly darker green for active state */
+  box-shadow: 0 2px #00ff01; /* Reduced shadow to simulate pressing */
   transform: translateY(2px); /* Slight downward movement */
 }
 
-h1{
+h1 {
   font-size: 42px !important;
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
   font-weight: 700 !important;
 }
 
-h2{
+h2 {
   font-size: 36px !important;
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
   font-weight: 700 !important;
 }
 
-h3{
+h3 {
   font-size: 28px !important;
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
   font-weight: 600 !important;
 }
 
-p{
+p {
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
   font-weight: 400 !important;
@@ -125,10 +138,9 @@ p{
   align-self: stretch;
   border-radius: 25px !important;
   border: 1px solid #000;
-  background: #FFF;
+  background: #fff;
   box-shadow: 2px 2px 0px 0px #000;
 }
-
 
 .custom-input:focus {
   box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2); /* Slight shadow on focus */
@@ -138,7 +150,7 @@ p{
   max-width: var(--width-620, 620px) !important;
   height: 45px !important;
   border-radius: 25px;
-  background: #FFF;
+  background: #fff;
   box-shadow: 2px 2px 0px 0px #000;
   outline: none; /* Optional: Removes the default outline */
   font-size: 14px; /* Font size for readability */
@@ -203,59 +215,58 @@ select:focus {
 @media (max-width: 991.98px) {
   /* Show on screens smaller than lg (992px) */
   .custom-toggle {
-      display: block;
+    display: block;
   }
 }
 
 .stroke-animation {
-    position: relative;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
+  position: relative;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .stroke-text {
-    position: relative;
-    display: inline-block;
-    color: black;
+  position: relative;
+  display: inline-block;
+  color: black;
 }
 
 .stroke-text::after {
-    content: 'Education';
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: transparent;
-    text-shadow: 0 0 0 #039 ;
-    overflow: hidden;
-    width: 0%;
-    border-right: 1px solid transparent;
-    animation: stroke-draw 3s ease-in-out infinite;
-    white-space: nowrap;
+  content: "Education";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  text-shadow: 0 0 0 #039;
+  overflow: hidden;
+  width: 0%;
+  border-right: 1px solid transparent;
+  animation: stroke-draw 3s ease-in-out infinite;
+  white-space: nowrap;
 }
 
 @keyframes stroke-draw {
-    0% {
-        width: 0%;
-    }
-    60% {
-        width: 100%;
-    }
-    100% {
-        width: 100%;
-    }
+  0% {
+    width: 0%;
+  }
+  60% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @keyframes fade {
-    0%, 75% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0%,
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
-
-
 
 /* Hover effect with yellow underline */
 .footer-link {
@@ -269,13 +280,13 @@ select:focus {
 }
 
 .footer-link::after {
-  content: ''; /* Creates an empty element after the text */
+  content: ""; /* Creates an empty element after the text */
   position: absolute;
   bottom: 0; /* Position the underline at the bottom of the text */
   left: 0;
   width: 0;
   height: 2px; /* Thickness of the underline */
-  background-color: #FEFF35; /* Color of the underline */
+  background-color: #feff35; /* Color of the underline */
   transition: width 0.3s ease; /* Smooth transition effect */
 }
 
@@ -284,37 +295,40 @@ select:focus {
 }
 
 .nav-head {
-  color: #FEFF35 !important;
+  color: #feff35 !important;
   font-weight: bold !important;
   vertical-align: middle;
   line-height: 1.8;
 }
 
 .navcont {
-  background-color: rgba(0, 0, 0, 0.879) !important;
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-  color: #FEFF35 !important;
+  color: rgb(57, 57, 57) !important;
+  /* height: 80px !important; */
+  padding: 2px 0px !important;
+  /* color: #FEFF35 !important; */
 }
 
 .navpaths {
-  color: #FEFF35 !important;
+  color: #feff35 !important;
   text-decoration: none;
   position: relative;
 }
 
 .navpaths:hover {
-  color: #00FF01 !important;
+  color: #25de25 !important;
   transition: color 0.75s ease !important;
 }
 
 .navpaths::after {
-  content: ''; /* Creates the underline effect */
+  content: ""; /* Creates the underline effect */
   position: absolute;
   bottom: 10px; /* Position the underline below the text */
   left: 0;
   width: 0;
   height: 2px; /* Thickness of the underline */
-  background-color: #FEFF35; /* Yellow underline */
+  background-color: #feff35; /* Yellow underline */
   transition: width 0.75s ease; /* Smooth animation for the underline */
 }
 
@@ -322,9 +336,8 @@ select:focus {
   width: 100%; /* Expands the underline to full width on hover */
 }
 
-
 .navpaths {
-  color: rgb(194, 191, 191) !important;
+  color: rgb(0, 0, 0) !important;
   font-size: 18px !important;
   border: none;
   outline: none;
@@ -345,7 +358,6 @@ select:focus {
 .navcont button:hover {
   outline: none;
 }
-
 
 /* Responsive Font Sizes for h1, h2, h3, and p */
 @media (max-width: 991px) {
@@ -407,4 +419,3 @@ select:focus {
     font-size: 0.85rem !important;
   }
 }
-
